@@ -8,6 +8,9 @@ ENV PYTHONUNBUFFERED=1
 # Set working directory inside container
 WORKDIR /app
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y ffmpeg libsndfile1-dev && rm -rf /var/lib/apt/lists/*
+
 # Copy requirements and install
 COPY requirements.txt /app/
 RUN pip install --upgrade pip && pip install -r requirements.txt
@@ -18,5 +21,5 @@ COPY . /app/
 # Expose Flask default port
 EXPOSE 5000
 
-# Start the Flask app
-CMD ["python", "app.py"]
+# Run the app using Gunicorn
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
