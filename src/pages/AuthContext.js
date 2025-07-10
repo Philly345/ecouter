@@ -3,16 +3,17 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext();
+const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [logoutLoading, setLogoutLoading] = useState(false); // ✅ New state
+  const [logoutLoading, setLogoutLoading] = useState(false);
   const [user, setUser] = useState(null);
 
   const fetchSession = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/session', { withCredentials: true });
+      const res = await axios.get(`${API_BASE}/api/session`, { withCredentials: true });
       if (res.data && res.data.authenticated) {
         setIsAuthenticated(true);
         setUser(res.data.user);
@@ -40,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     setLogoutLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/logout', {}, { withCredentials: true });
+      await axios.post(`${API_BASE}/api/logout`, {}, { withCredentials: true });
     } catch (err) {
       console.error('Logout failed:', err);
     } finally {
@@ -69,3 +70,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
+
