@@ -134,7 +134,7 @@ torch-audiomentations==0.12.0
 torch_pitch_shift==1.2.5
 torchaudio==2.7.1
 torchmetrics==1.7.4
-torchvision==0.22.1+cpu
+torchvision==0.22.1
 tqdm==4.67.1
 transformers==4.53.1
 typer==0.16.0
