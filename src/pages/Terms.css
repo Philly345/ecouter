@@ -1,0 +1,70 @@
+.terms-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 32px;
+  color: #f5f5f5;
+  background-color: #121212;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.terms-container h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(90deg, #00d4ff, #3a47d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: 700;
+}
+
+.terms-container h2 {
+  font-size: 1.6rem;
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  color: #00b4d8;
+  font-weight: 600;
+}
+
+.terms-container p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.terms-container ul {
+  list-style: disc;
+  padding-left: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.terms-container li {
+  margin-bottom: 0.6rem;
+}
+
+.terms-container a {
+  color: #1faaff;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.terms-container a:hover {
+  color: #63ccff;
+}
+
+@media (max-width: 768px) {
+  .terms-container {
+    padding: 24px 16px;
+    font-size: 1rem;
+  }
+
+  .terms-container h1 {
+    font-size: 2rem;
+  }
+
+  .terms-container h2 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,67 @@
+.transcription-page {
+  padding: 2rem;
+  color: #fff;
+  background-color: #121212;
+  height: 100%;
+}
+
+.transcription-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #f1f1f1;
+}
+
+.transcription-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.transcription-card {
+  background-color: #1f1f1f;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 10px #00000050;
+}
+
+.transcription-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.transcription-card .date {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+  margin-bottom: 0.5rem;
+}
+
+.transcription-card .summary {
+  font-size: 1rem;
+  color: #dddddd;
+  margin-bottom: 1rem;
+}
+
+.view-button {
+  background-color: #0a84ff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #006edc;
+}
+
+.no-transcriptions {
+  font-size: 1.2rem;
+  color: #999;
+  margin-top: 2rem;
+}

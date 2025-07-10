@@ -1,24 +1,63 @@
-import logo from './logo.svg';
+
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
+import Verify from './pages/Verify';
+import NotFound from './pages/NotFound';
+import PostLogin from './pages/PostLogin';
+import WelcomePage from './pages/WelcomePage';
+import Home from './pages/Home';
+import TranscriptDetail from './pages/TranscriptDetail';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+
+import { useAuth } from './pages/AuthContext';
+import SupportChat from './pages/SupportChat';
+
 import './App.css';
 
 function App() {
+  const { isAuthenticated, loading } = useAuth();
+
+  // ✅ Show splash/loading screen until session is confirmed
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <h2>Loading session...</h2>
+      </div>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+        <ToastContainer position="top-right" autoClose={3000} />
+
+        <Routes>
+          <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Home />} />
+          <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} />
+          <Route path="/signup" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signup />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
+          <Route path="/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" />} />
+          <Route path="/verify" element={<Verify />} />
+          <Route path="/post-login" element={<PostLogin />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/transcript/:id" element={isAuthenticated ? <TranscriptDetail /> : <Navigate to="/login" />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+
+        {isAuthenticated && <SupportChat />}
+      </>
+    </Router>
   );
 }
 

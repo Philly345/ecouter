@@ -1,0 +1,79 @@
+/* Sidebar container */
+.sidebar {
+  width: 240px;
+  background-color: #111;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Toggle button */
+.toggle-btn {
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 18px;
+  text-align: right;
+}
+
+/* Sidebar title (visible only when open) */
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* Sidebar item */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar li .icon {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: #333;
+}
+
+/* Hide text in collapsed view */
+.sidebar.collapsed li span {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-title {
+  display: none;
+}
+
+/* Spacer to push logout button upward */
+.sidebar-spacer {
+  flex-grow: 1;
+}
+
+/* Logout styling */
+.sidebar li.logout {
+  background-color: #222;
+}

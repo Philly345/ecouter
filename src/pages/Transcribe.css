@@ -1,0 +1,123 @@
+.transcribe-container {
+  padding: 30px;
+  color: white;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Main form container */
+.transcribe-box {
+  margin-top: 20px;
+  background-color: #121212;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Group form fields in rows */
+.transcribe-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual input group */
+.transcribe-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.transcribe-field label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Inputs, dropdowns */
+.transcribe-box input[type="file"],
+.transcribe-box select,
+.transcribe-box input[type="text"] {
+  padding: 10px;
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 5px;
+}
+
+/* Tag input */
+.tags-input {
+  width: 100%;
+}
+
+/* Checkboxes aligned nicely */
+.transcribe-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.transcribe-checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+/* Transcribe button */
+.transcribe-box button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.transcribe-box button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Audio preview */
+.audio-preview {
+  margin-top: 40px;
+}
+
+.audio-preview audio {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 10px;
+}
+
+/* Transcript output */
+.word-highlighting {
+  margin-top: 25px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+.word-highlighting .highlight {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* Summary section */
+.summary-box {
+  margin-top: 30px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+}
