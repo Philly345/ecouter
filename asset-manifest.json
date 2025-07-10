@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Ecouter.main/static/css/main.3d3b0094.css",
-    "main.js": "/Ecouter.main/static/js/main.32183783.js",
-    "index.html": "/Ecouter.main/index.html",
-    "static/media/Logo.svg": "/Ecouter.main/static/media/Logo.3f3bb0206d8721ce890cc509fb4faae6.svg",
-    "main.3d3b0094.css.map": "/Ecouter.main/static/css/main.3d3b0094.css.map",
-    "main.32183783.js.map": "/Ecouter.main/static/js/main.32183783.js.map"
+    "main.css": "/ecouter/static/css/main.3d3b0094.css",
+    "main.js": "/ecouter/static/js/main.76bac3d2.js",
+    "index.html": "/ecouter/index.html",
+    "static/media/Logo.svg": "/ecouter/static/media/Logo.3f3bb0206d8721ce890cc509fb4faae6.svg",
+    "main.3d3b0094.css.map": "/ecouter/static/css/main.3d3b0094.css.map",
+    "main.76bac3d2.js.map": "/ecouter/static/js/main.76bac3d2.js.map"
   },
   "entrypoints": [
     "static/css/main.3d3b0094.css",
-    "static/js/main.32183783.js"
+    "static/js/main.76bac3d2.js"
   ]
 }
