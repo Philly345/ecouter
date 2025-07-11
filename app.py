@@ -195,6 +195,6 @@ def support_chat():
 def home():
     return jsonify({"message": "Écouter backend is running."})
 
-# === Run App for Render ===
+# --- Run ---
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    app.run(debug=True)
