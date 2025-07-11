@@ -6,7 +6,9 @@ function Login() {
   const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
-    window.location.href = 'http://localhost:5000/login/google';
+    // Use environment variable instead of hardcoded localhost
+    const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+    window.location.href = `${baseURL}/login/google`;
   };
 
   return (
@@ -27,7 +29,6 @@ function Login() {
         <span>Continue with Google</span>
       </button>
 
-      {/* ✅ Back to signup link */}
       <p style={{ marginTop: '1.5rem', color: '#888', fontSize: '14px' }}>
         Don’t have an account?{' '}
         <button
