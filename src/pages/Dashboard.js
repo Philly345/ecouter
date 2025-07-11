@@ -17,8 +17,6 @@ import Projects from './Projects';
 import Tags from './tags';
 import { useNavigate } from 'react-router-dom';
 
-const API = process.env.REACT_APP_API_URL;
-
 function Dashboard() {
   const [activeComponent, setActiveComponent] = useState('transcribe');
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -28,7 +26,7 @@ function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(`${API}/logout`, {
+      const response = await fetch('http://localhost:5000/logout', {
         method: 'POST',
         credentials: 'include',
       });
@@ -48,7 +46,7 @@ function Dashboard() {
 
   const fetchDashboardData = async () => {
     try {
-      const res = await fetch(`${API}/api/profile`, {
+      const res = await fetch('http://localhost:5000/api/profile', {
         method: 'GET',
         credentials: 'include',
       });
