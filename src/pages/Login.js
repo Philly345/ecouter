@@ -2,13 +2,11 @@ import React from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
-const API = process.env.REACT_APP_API_URL;
-
 function Login() {
   const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
-    window.location.href = `${API}/login/google`;
+    window.location.href = 'http://localhost:5000/login/google';
   };
 
   return (
@@ -29,6 +27,7 @@ function Login() {
         <span>Continue with Google</span>
       </button>
 
+      {/* ✅ Back to signup link */}
       <p style={{ marginTop: '1.5rem', color: '#888', fontSize: '14px' }}>
         Don’t have an account?{' '}
         <button
@@ -51,4 +50,3 @@ function Login() {
 }
 
 export default Login;
-
