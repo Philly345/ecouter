@@ -4,16 +4,21 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE_URL,
+  withCredentials: true,
+});
+
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [logoutLoading, setLogoutLoading] = useState(false); // ✅ New state
+  const [logoutLoading, setLogoutLoading] = useState(false);
   const [user, setUser] = useState(null);
 
   const fetchSession = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/session', { withCredentials: true });
-      if (res.data && res.data.authenticated) {
+      const res = await api.get('/api/session');
+      if (res.data?.authenticated) {
         setIsAuthenticated(true);
         setUser(res.data.user);
       } else {
@@ -40,7 +45,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     setLogoutLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/logout', {}, { withCredentials: true });
+      await api.post('/api/logout');
     } catch (err) {
       console.error('Logout failed:', err);
     } finally {
@@ -69,3 +74,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
+
